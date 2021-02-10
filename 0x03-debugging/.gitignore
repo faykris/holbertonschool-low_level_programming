@@ -1,6 +1,9 @@
 *~
 0-main
 1-main
+2-main.c
+3-main_a.c
+3-convert_day.c
 a.out
 main.c
 positive_or_negative.c
