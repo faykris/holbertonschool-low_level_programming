@@ -34,5 +34,8 @@ void print_square(int size);
 /* Prints a triangle followed by a new line */
 void print_triangle(int size);
 
+/* Prints a integer */
+void print_number(int n);
+
 #endif /* holberton.h */
 
