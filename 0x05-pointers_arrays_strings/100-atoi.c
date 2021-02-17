@@ -1,16 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-/**
-* leng - function that convert a string to an integer.
-* @s: string
-* Return: integer value
-*/
-
-int leng(char *s)
-{
-	return (*s != '\0' ? 1 + leng(s + 1) : 0);
-}
-
 /**
 * _atoi - function that convert a string to an integer
 * @s: string
@@ -19,29 +7,36 @@ int leng(char *s)
 
 int _atoi(char *s)
 {
-	int exp = 1, sign = 1, exit = 0, i, p;
+	int m = 0;
+	int i = -1;
+	int h = 0;
 
-	const int len = leng(s);
-
-	for (p = len; p >= 0; p--)
+	while (s[m] != '\0')
 	{
-		if (*(s + p) == '-' && exp > 1)
-			sign *= -1;
-		for (i = 0; i <= 9; i++)
+		if (s[m] == '-')
 		{
-			if (*(s + p) == ('0' + i))
+			i *= -1;
+		}
+		if (s[m] > 47 && s[m] < 58)
+		{
+			if (h < 0)
 			{
-				if (((p + 1) <= len) &&
-				    !((*(s + (p + 1)) >= '0') &&
-				      (*(s + (p + 1)) <= '9')))
-				{
-					exp = 1;
-					exit = 0;
-				}
-				exit += (i * exp);
-				exp *= 10;
+				h = (h * 10) - (s[m] - '0');
+			}
+			else
+			{
+				h = (s[m] - '0') * -1;
+			}
+			if (s[m + 1] < 48 || s[m + 1] > 57)
+			{
+				break;
 			}
 		}
+		m++;
 	}
-	return ((exit * sign) + 0);
+	if (i < 0)
+	{
+		h *= -1;
+	}
+	return (h);
 }
