@@ -34,4 +34,7 @@ void print_array(int *a, int n);
 /* copies the string pointed to by src, including the terminating null byte (\0)*/
 char *_strcpy(char *dest, char *src);
 
+/* convert a string to a integer*/
+int _atoi(char *s);
+
 #endif /* holberton.h */
