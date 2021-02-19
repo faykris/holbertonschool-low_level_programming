@@ -9,17 +9,23 @@ char *cap_string(char *s)
 	int i = 0, j = 0;
 	char *sep = " \t\n,;.!?\"(){}";
 
+	if (str[0] >= 97 && str[0] <= 122)
+	{
+		s[0] = s[0] - 32;
+	}
 	while (s[i])
 	{
-		if (s[i] >= 97 && s[i] <= 122)
+		while (sep[j])
 		{
-			while (sep[j])
+			if (s[i] == sep[j] && s[i + 1] != '\0')
 			{
-				if (s[i - 1] == sep[j])
-					s[i] -= 32;
-				j++;
+				if (s[i + 1] >= 97 && s[i + 1] <= 122)
+				{
+					s[i + 1] = str[i + 1] - 32;
+				}
+				break;
 			}
-			j = 0;
+			J++;
 		}
 		i++;
 	}
