@@ -19,6 +19,8 @@ char *cap_string(char *s)
 		{
 			s[i] -= 32;
 		}
+		else if (s[i] == '\t')
+			s[i] = 32;
 		i++;
 	}
 	return (s);
