@@ -11,11 +11,11 @@ char *cap_string(char *s)
 
 	while (s[i])
 	{
-		if (s[i] >= 97 && s[i] <= 122)                         
+		if (s[i] >= 97 && s[i] <= 122)
 		{
 			while (sep[j])
 			{
-				if (s[i-1] == sep[j])            
+				if (s[i - 1] == sep[j])
 					s[i] -= 32;
 				j++;
 			}
