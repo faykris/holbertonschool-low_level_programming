@@ -6,26 +6,27 @@
  */
 char *cap_string(char *s)
 {
-	int i, j;
+	int i = 0, j = 0;
 	char *sep = " \t\n,;.!?\"(){}";
 
-	if (s[0] >= 97 && s[0] <= 122)
+	if (s[i] >= 97 && s[i] <= 122)
+		s[i] -= 32;
+
+	while (s[i])
 	{
-		s[0] = s[0] - 32;
-	}
-	for (i = 0; s[i]; i++)
-	{
-		for (j = 0; sep[j]; j++)
+		if (s[i] >= 97 && s[i] <= 122)
 		{
-			if (s[i] == sep[j] && s[i + 1] != '\0')
+			while (sep[j])
 			{
-				if (s[i + 1] >= 97 && s[i + 1] <= 122)
+				if (s[i - 1] == sep[j])
 				{
-					s[i + 1] = s[i + 1] - 32;
+					s[i] -= 32;
 				}
-				break;
+				j++;
 			}
+			j = 0;
 		}
+		i++;
 	}
 	return (s);
 }
