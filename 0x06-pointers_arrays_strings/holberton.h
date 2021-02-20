@@ -1,6 +1,9 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
 
+/* writes the character c to stdout */
+int _putchar(char c);
+
 /* concatenates two strings */
 char *_strcat(char *dest, char *src);
 
@@ -27,5 +30,8 @@ char *leet(char *);
 
 /* encodes a string using rot13 */
 char *rot13(char *);
+
+/* prints an integer */
+void print_number(int n);
 
 #endif /* holberton.h */
