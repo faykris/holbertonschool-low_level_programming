@@ -1,6 +1,9 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
 
+/* Writes the character c to stdout */
+int _putchar(char c);
+
 /* Prints a string, followed by a new line */
 void _puts_recursion(char *s);
 
