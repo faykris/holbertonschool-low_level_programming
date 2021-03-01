@@ -13,21 +13,31 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 1, res = 0;
+	int i = 1, j = 0, res;
 
-	while (i < argc)
+	if (argc > 1)
 	{
-		if (isdigit(*argv[i]) != 0 || atoi(argv[i]) < 0)
+		while (i < argc)
 		{
+			while (argv[i][j])
+			{
+				if (!isdigit(argv[i][j]))
+				{
+					printf("Error\n");
+					return (1);
+				}
+				j++;
+			}
+			j = 0;
 			res += atoi(argv[i]);
+			i++;
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
-		i++;
 	}
-	printf("%d\n", res);
+	else
+	{
+		printf("0\n");
+		return (0);
+	}
+	printf("%i\n", res);
 	return (0);
-}
+	}
