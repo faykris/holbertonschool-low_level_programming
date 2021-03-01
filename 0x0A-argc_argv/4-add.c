@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - adds positive numbers
@@ -16,7 +17,7 @@ int main(int argc, char *argv[])
 
 	while (i < argc)
 	{
-		if ((*argv[i] >= '0' && *argv[i] <= '9') || atoi(argv[i]) < 0)
+		if (isdigit(*argv[i]) != 0 || atoi(argv[i]) < 0)
 		{
 			res += atoi(argv[i]);
 		}
