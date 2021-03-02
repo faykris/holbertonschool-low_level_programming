@@ -16,16 +16,16 @@ char *str_concat(char *s1, char *s2)
 	char *arr;
 
 	if (!s1)
-		return ('\0');
+		return (NULL);
 	if (!s2)
-		return ('\0');
+		return (NULL);
 	while (s1[i])
 		i++;
 	while (s2[j])
 		j++;
-	arr = malloc(sizeof(char) + (i + j + 1));
+	arr = malloc(sizeof(char) + (i + j));
 	if (arr == 0)
-		return ('\0');
+		return (NULL);
 	while (k <= i)
 	{
 		arr[k] = s1[k];
