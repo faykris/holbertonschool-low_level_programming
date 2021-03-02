@@ -15,9 +15,7 @@ char *str_concat(char *s1, char *s2)
 	int i = 0, j = 0, k = 0, l = 0;
 	char *arr;
 
-	if (!s1)
-		return (NULL);
-	if (!s2)
+	if (!s1 || !s2)
 		return (NULL);
 	while (s1[i])
 		i++;
