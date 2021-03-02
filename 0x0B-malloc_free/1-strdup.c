@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * _strdup - function that returns a pointer to a newly allocated
@@ -18,14 +19,14 @@ char *_strdup(char *str)
 	{
 		return ('\0');
 	}
+	while (str[i])
+	{
+		i++;
+	}
 	dup = malloc(sizeof(char) * (i + 1));
 	if (dup == 0)
 	{
 		return ('\0');
-	}
-	while (str[i])
-	{
-		i++;
 	}
 	while (j <= i)
 	{
