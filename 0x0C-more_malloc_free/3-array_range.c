@@ -24,10 +24,11 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-	while (i < (max - min + 1))
+	while (min <= max)
 	{
-		ptr[i] = min + i;
+		ptr[i] = min;
 		i++;
+		min++;
 	}
 	return (ptr);
 }
