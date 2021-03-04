@@ -39,12 +39,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		if (l >= n)
 		{
-			break;
+			ptr[k] = '\0';
+			return (ptr);
 		}
 		ptr[k] = s2[l];
 		k++;
 		l++;
 	}
-	ptr[k] = '\0';
 	return (ptr);
 }
