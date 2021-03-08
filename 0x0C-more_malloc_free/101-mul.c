@@ -12,5 +12,17 @@
 
 int main(int argc, char *argv[])
 {
+	int i = 0;
 
+	while (argv[i])
+	{
+		i++;
+	}
+
+	if (i != 2)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	
 }
