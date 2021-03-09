@@ -17,8 +17,7 @@ struct dog
 	char *owner;
 };
 
-
-/* data structure synonym*/
+/* data structure synonym */
 typedef struct dog dog_t;
 
 /* function that initialize a variable of type struct dog */
