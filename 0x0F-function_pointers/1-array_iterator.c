@@ -14,9 +14,12 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 	unsigned long i = 0;
 	void (*print_array)(int) = action;
 
-	while (i < size)
+	if (array != NULL && action != NULL)
 	{
-		print_array(array[i]);
-		i++;
+		while (i < size)
+		{
+			print_array(array[i]);
+			i++;
+		}
 	}
 }
