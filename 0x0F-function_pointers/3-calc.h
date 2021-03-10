@@ -1,4 +1,4 @@
 #ifndef CALC_H
-#define CAL_H
+#define CALC_H
 
 #endif
