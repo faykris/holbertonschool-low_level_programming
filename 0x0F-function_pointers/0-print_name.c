@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * print_name - prints a name.
- * @name: The name that wants to be printed.
- * @f: function pointer.
+ * print_name - prints a name
+ * @name: char pointer
+ * @f: function pointer
  *
- * Return: None.
+ * Return: nothing
  */
 void print_name(char *name, void (*f)(char *))
 {
