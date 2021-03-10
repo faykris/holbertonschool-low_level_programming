@@ -1,7 +1,8 @@
-#ifndef FUNCTION_POINTER
-#define FUNCTION_POINTER
+#ifndef FUNCTION_POINTER_H
+#define FUNCTION_POINTER_H
 
-typedef unsigned long size_t; 
+typedef unsigned long size_t;
+ 
 /* function that prints a name */
 void print_name(char *name, void (*f)(char *));
 
