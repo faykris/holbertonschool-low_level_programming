@@ -3,6 +3,9 @@
 
 typedef unsigned long size_t;
 
+/* writes the character c to stdout */
+int _putchar(char c);
+
 /* function that prints a name */
 void print_name(char *name, void (*f)(char *));
 
