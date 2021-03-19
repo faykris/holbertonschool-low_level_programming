@@ -5,7 +5,7 @@
  * @head: address node head
  * @str: string value to add
  *
- * Return: added node pointer
+ * Return: added address new node
  */
 list_t *add_node(list_t **head, const char *str)
 {
@@ -26,7 +26,7 @@ list_t *add_node(list_t **head, const char *str)
 	add->len = strlen(str);
 	if (add->len == 0)
 	{
-		add->str = "(nil)";
+		return (NULL);
 	}
 	add->next = *head;
 	*head = add;
