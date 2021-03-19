@@ -26,6 +26,10 @@ list_t *add_node(list_t **head, const char *str)
 		i++;
 	}
 	add->str = strdup(str);
+	if (i == 0)
+	{
+		add->str = "(nil)";
+	}
 	add->len = i;
 	add->next = *head;
 	*head = add;
