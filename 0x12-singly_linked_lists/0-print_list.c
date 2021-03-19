@@ -2,7 +2,7 @@
 
 /**
  * print_list - function that prints all the elements of a list_t list
- * @h - lis_t cons values
+ * @h: lis_t cons values
  *
  * Return: the number of nodes
  */
