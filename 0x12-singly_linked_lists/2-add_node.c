@@ -9,8 +9,8 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *add, *new = NULL;
-	int i = 0;
+	list_t *add;
+
 
 	if (head == NULL)
 	{
@@ -21,20 +21,15 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-	while (str[i])
-	{
-		i++;
-	}
+
 	add->str = strdup(str);
-	if (i == 0)
+	add->len = strlen(str);
+	if (add->len == 0)
 	{
 		add->str = "(nil)";
 	}
-	add->len = i;
 	add->next = *head;
 	*head = add;
-	add = new;
 
-	free(add);
-	return (new);
+	return (add);
 }
