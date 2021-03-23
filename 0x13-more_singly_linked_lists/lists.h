@@ -56,4 +56,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 /*     linked list */
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 
+/* 11. Function that reverses a listint_t linked list */
+listint_t *reverse_listint(listint_t **head);
+
+/* 12. function that prints a listint_t linked list */
+size_t print_listint_safe(const listint_t *head);
+
+/* 13. function that frees a listint_t list */
+size_t free_listint_safe(listint_t **h);
+
+/* 14. function that finds the loop in a linked list */
+listint_t *find_listint_loop(listint_t *head);
+
 #endif
