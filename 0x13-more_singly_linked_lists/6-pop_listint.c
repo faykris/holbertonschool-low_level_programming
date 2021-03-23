@@ -10,16 +10,18 @@
 int pop_listint(listint_t **head)
 {
 	listint_t *toDelete = NULL;
+	int num = 0;
 
-		if (*head == NULL)
-		{
-			return (0);
-		}
-		else
-		{
-			toDelete = *head;
-			*head = (*head)->next;
-			free(toDelete);
-			return (1);
-		}
+	if (head == NULL)
+	{
+		return (0);
+	}
+	else
+	{
+		num = (*head)->n;
+		toDelete = (*head)->next;
+		free(*head);
+		*head = toDelete;
+		return (num);
+	}
 }
