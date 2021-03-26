@@ -74,7 +74,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 		{
 			bitnum[j] = '1';
 		}
-		else if ((*n >> i & 1) == 1) 
+		else if ((*n >> i & 1) == 1)
 		{
 			bitnum[j] = '1';
 		}
