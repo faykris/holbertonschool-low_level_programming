@@ -70,11 +70,11 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	while (i >= 0)
 	{
-		if ((*n >> i & 1) == 1)
+		if (i == (int)index)
 		{
 			bitnum[j] = '1';
 		}
-		else if (i == (int)index)
+		else if ((*n >> i & 1) == 1) 
 		{
 			bitnum[j] = '1';
 		}
