@@ -41,7 +41,7 @@ unsigned int binary_to_uint(const char *b)
 }
 
 /**
- * set_bit - returns the value of a bit at a given index.
+ * clear_bit - sets the value of a bit to 0 at a given index.
  * @n: number to analize in binary
  * @index: position of bit to return
  *
