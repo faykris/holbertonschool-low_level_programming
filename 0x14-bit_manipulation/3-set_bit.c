@@ -52,12 +52,19 @@ int set_bit(unsigned long int *n, unsigned int index)
 	int i = 0, j = 0;
 	char *bitnum = NULL;
 
-	while (*n >> i != 0)
+	if (*n <= 0)
+	{
+		return (0);
+	}
+	while (*n >> i != 0 && i < 100)
 	{
 		i++;
 	}
 	i--;
-	
+	if ((int)index > i)
+	{
+		return (-1);
+	}
 	bitnum = malloc(i + 1);
 	if (!bitnum)
 		return (-1);
