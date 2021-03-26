@@ -15,7 +15,7 @@ void print_binary(unsigned long int n)
 		_putchar(n + '0');
 		return;
 	}
-	while (n >> i != 0 && i < 100)
+	while (n >> i != 0 && i < 64)
 	{
 		i++;
 	}
