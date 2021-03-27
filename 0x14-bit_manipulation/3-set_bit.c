@@ -52,6 +52,10 @@ int set_bit(unsigned long int *n, unsigned int index)
 	int i = 64, j = 0;
 	char *bitnum = NULL;
 
+	if (index > 64)
+	{
+		return (1);
+	}
 	if ((int)index > i && index != 0)
 	{
 		i = index + 1;
