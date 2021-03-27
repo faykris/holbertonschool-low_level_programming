@@ -49,10 +49,10 @@ unsigned int binary_to_uint(const char *b)
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	int i = 0, j = 0;
+	int i = 64, j = 0;
 	char *bitnum = NULL;
-
-	i = 64;
+	if ((int)index >= i)
+		i = index + 1;
 	bitnum = malloc(i + 1);
 	if (!bitnum)
 		return (-1);
