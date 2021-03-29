@@ -1,15 +1,17 @@
 #include "holberton.h"
 
 /**
-* read_textfile - reads a text file and prints it to the
-*					POSIX standard output.
-*
-* Return: Always 0.
-*/
+ * read_textfile - reads a text file and prints it to
+ *				the POSIX standard output
+ * @filename: name of file to read
+ * @letters: quantity of letters
+ *
+ * Return: Always 0.
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd = 0;
-	unsigned int i = 0, j = 0;
+	unsigned int r = 0, w = 0;
 	char buf[letters];
 
 	if (filename == NULL)
@@ -21,20 +23,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	i = read(fd, buf, letters);
+	r = read(fd, buf, letters);
 
 	close(fd);
 
-	j = write(STDOUT_FILENO, buf, i);
+	w = write(STDOUT_FILENO, buf, r);
 
-	if (j == i)
+	if (r == w)
 	{
-		return (j);
+		return (w);
 	}
-	else
-	{
-		return (0);
-	}
-	return (i);
-
+	return (0);
 }
