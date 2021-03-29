@@ -7,6 +7,9 @@
 #include <fcntl.h>
 #include <string.h>
 
+/* writes the character c to stdout. */
+int _putchar(char c);
+
 /* 0. Reads a text file and prints it to the POSIX standard output. */
 ssize_t read_textfile(const char *filename, size_t letters);
 
