@@ -40,12 +40,12 @@ int main(int argc, char *argv[])
 	close(fd2);
 	if (fd1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't close fd FD_VALUE %d\n", fd1);
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd1);
 		exit(100);
 	}
 	else if (fd2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't close fd FD_VALUE %d\n", fd2);
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd2);
 		exit(100);
 	}
 	return (0);
