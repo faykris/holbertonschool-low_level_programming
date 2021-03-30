@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd1 = 0, fd2 = 0, br, bw;
+	int fd1 = 0, fd2 = 0, br = 1024, bw;
 	char *buf;
 
 	if (argc != 3)
@@ -19,20 +19,23 @@ int main(int argc, char *argv[])
 	}
 	fd1 = open(argv[1], O_RDONLY);
 	buf = malloc(1024);
-	br = read(fd1, buf, 1024);
-	if (fd1 == -1 || br == -1)
+	while (br == 1024)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		br = read(fd1, buf, 1024);
+		if (br == -1 || fd1 == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		fd2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+		bw = write(fd2, buf, br);
+		if (fd2 == -1 || bw == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
-	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	bw = write(fd2, buf, br);
 	free(buf);
-	if (fd2 == -1 || bw == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
 	close(fd1);
 	close(fd2);
 	if (fd1 == -1)
