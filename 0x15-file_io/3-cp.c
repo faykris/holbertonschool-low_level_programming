@@ -18,7 +18,8 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	fd1 = open(argv[1], O_RDONLY);
-	buf = malloc(1024);
+	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	buf = malloc(sizeof(char) * 1024);
 	while (br == 1024)
 	{
 		br = read(fd1, buf, 1024);
@@ -27,7 +28,6 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		fd2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 		bw = write(fd2, buf, br);
 		if (fd2 == -1 || bw == -1)
 		{
