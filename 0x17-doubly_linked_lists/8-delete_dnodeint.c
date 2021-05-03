@@ -1,49 +1,47 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - inserts a new node at a given position.
- * @h: head structure address
- * @idx: index position to be added
- * @n: number to be added on the new idex
+ * delete_dnodeint_at_index - deletes the node at index of a linked list.
+ * @head: head structure address
+ * @index: index position to be added
  *
  * Return: the address of the new node, or NULL if it failed
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *tmp, *era;
-	unsigned int i = 0, j = 0;
+	dlistint_t *del, *pre;
+	unsigned int i = 0;
 
-	if (*head == NULL)
+	if (!head)
 	{
 		return (-1);
 	}
-	tmp = *head;
-	while (tmp->next != NULL)
+
+	del = *head;
+	pre = *head;
+
+	while (i < index)
 	{
-		tmp = tmp->next;
+		pre = del;
+		del = del->next;
+		if (del == NULL)
+			break;
 		i++;
 	}
-	if (index > i - 1)
+
+	if (del != NULL)
+	{
+		if (del == *head)
+		{
+			*head = (*head)->next;
+		}
+		pre->next = del->next;
+		del->next = NULL;
+		free(del);
+		return (1);
+	}
+	else
 	{
 		return (-1);
 	}
-	else if (index == 0)
-	{
-		era = *head;
-		free(era);
-		return (1);
-	}
-	while (tmp->prev != NULL)
-	{
-		if (j == (i - index))
-		{
-			
-			era = tmp;
-			tmp = tmp->prev;
-			free(era);
-
-		}
-		tmp = tmp->prev;
-	}
-	return (1);
 }
