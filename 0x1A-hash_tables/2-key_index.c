@@ -2,7 +2,8 @@
 
 /**
  * key_index - implementation of the djb2 algorithm
- * @str: string used to generate hash value
+ * @key: key value for a element
+ * @size: size of a hash table
  *
  * Return: hash value
  */
