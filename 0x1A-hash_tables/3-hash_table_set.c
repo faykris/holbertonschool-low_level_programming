@@ -13,14 +13,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *item = NULL;
 	unsigned long int i;
 
-	if (strlen(key) == 0)
-		return (0);
-	i = key_index((const unsigned char *)key, ht->size);
-	if (ht->array[i] != NULL)
-	{
-		strcpy(ht->array[i]->value, value);
-		return (1);
-	}
 	item = malloc(sizeof(hash_node_t));
 	if (item == NULL)
 	{
@@ -28,6 +20,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	item->key = calloc(strlen(key) + 1, 1);
 	item->value = calloc(strlen(value) + 1, 1);
+
+	i = key_index((const unsigned char *)key, ht->size);
 	strcpy(item->key, key);
 	strcpy(item->value, value);
 
@@ -35,3 +29,4 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	return (1);
 }
+
