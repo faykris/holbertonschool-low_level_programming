@@ -11,18 +11,21 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *item = NULL;
+	unsigned long int i;
 
 	item = malloc(sizeof(hash_node_t));
 	if (item == NULL)
+	{
 		return (0);
+	}
+	item->key = calloc(strlen(key) + 1, 1);
+	item->value = calloc(strlen(value) + 1, 1);
 
-	item->key = malloc(strlen(key) + 1);
-	item->value = malloc(strlen(value) + 1);
-
+	i = key_index((const unsigned char *)key, ht->size);
 	strcpy(item->key, key);
 	strcpy(item->value, value);
 
-    ht->array = &item;
+	ht->array[i] = item;
 
 	return (1);
 }
