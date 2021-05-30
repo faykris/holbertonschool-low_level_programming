@@ -24,13 +24,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
+	i = key_index((const unsigned char *)key, ht->size);
 	item->key = calloc(strlen(key) + 1, 1);
 	item->value = calloc(strlen(value) + 1, 1);
 
-	i = key_index((const unsigned char *)key, ht->size);
 	strcpy(item->key, key);
 	strcpy(item->value, value);
-	if (ht->array[i] != NULL)
+
+	if (ht->array[i] != NULL && strcmp(ht->array[i]->key, key))
 	{
 		item->next = ht->array[i];
 	}
