@@ -2,14 +2,14 @@
 
 /**
  * hash_table_print - retrieves a value associated with a key.
- * @ht: created hash table to be printed.
+ * @ht: created hash table to be printed
  *
  * Return: nothing.
  */
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i = 0, j = 0;
-	hash_node_t *node;
+	hash_node_t *node = NULL;
 
 	if (ht == NULL)
 		return;
