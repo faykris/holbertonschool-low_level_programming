@@ -23,7 +23,7 @@ int recusive_search(int *array, int value, size_t start, size_t end)
 	printf("\n");
 
 	pos = (start + end) / 2;
-	
+
 	if (array[pos] == value)
 		return (pos);
 	if (start == end)
