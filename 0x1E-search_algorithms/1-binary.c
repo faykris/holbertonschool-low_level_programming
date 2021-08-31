@@ -11,14 +11,17 @@
  */
 int recusive_search(int *array, int value, size_t start, size_t end)
 {
-	size_t pos = 0, i, j = 0;
+	size_t pos = 0, i;
 
 	printf("Searching in array: ");
-	for (i = start; i <= end; i++, j++)
+	for (i = start; i <= end; i++)
 	{
-		if (j != 0)
-			printf(", ");
-		printf("%d", array[i]);
+		if (i == start)
+			printf("%d", array[i]);
+		else
+		{
+			printf(", %d", array[i]);
+		}
 	}
 	printf("\n");
 
