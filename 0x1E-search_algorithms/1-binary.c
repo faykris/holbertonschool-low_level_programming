@@ -45,7 +45,7 @@ int recusive_search(int *array, int value, size_t start, size_t end)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	if (array == NULL)
+	if (array == NULL || size == 0)
 		return (-1);
 
 	return (recusive_search(array, value, 0, size - 1));
